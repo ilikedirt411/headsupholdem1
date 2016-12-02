@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/settings_scroll_parent" android:layout_height="fill_parent" android:layout_width="fill_parent" android:scrollbarAlwaysDrawVerticalTrack="true">
+	<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/settings_layout" android:scrollbars="vertical" android:scrollbarAlwaysDrawVerticalTrack="false">
+		<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_centerHorizontal="true" android:layout_margin="10dp" android:id="@+id/settings_label_title" android:text="Settings" android:textStyle="bold" android:textSize="30sp"></TextView>
+	
+		<LinearLayout android:layout_alignParentLeft="true" android:layout_height="wrap_content" android:id="@+id/settings_layout_playerschips" android:layout_width="fill_parent" android:layout_below="@id/settings_label_title">
+			<LinearLayout android:layout_height="wrap_content" android:orientation="vertical" android:id="@+id/settings_layout_players" android:layout_width="fill_parent" android:layout_weight="1">
+			<TextView android:layout_height="wrap_content" android:layout_below="@+id/settings_label_title" android:layout_width="wrap_content" android:layout_margin="10dp" android:id="@+id/settings_label_players" android:text="Players:" android:textSize="18sp"></TextView>
+			<EditText android:layout_height="wrap_content" android:id="@+id/settings_player1_name" android:layout_margin="10dp" android:text="Player 1" android:layout_width="fill_parent" android:inputType="text|textPersonName" android:maxLength="20" android:maxLines="1"></EditText>
+			<EditText android:layout_height="wrap_content" android:id="@+id/settings_player2_name" android:text="Player 2" android:layout_width="fill_parent" android:layout_margin="10dp" android:inputType="text|textPersonName" android:maxLength="20" android:maxLines="1"></EditText>
+			</LinearLayout>
+			
+			<LinearLayout android:layout_weight="1" android:layout_height="wrap_content" android:layout_width="fill_parent" android:orientation="vertical" android:id="@+id/settings_layout_chips">
+			<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_alignParentRight="true" android:layout_margin="10dp" android:layout_below="@id/settings_label_title" android:id="@+id/settings_label_chips" android:text="Starting Chips:" android:textSize="18sp"></TextView>
+			<EditText android:layout_height="wrap_content" android:id="@+id/settings_player1_chips" android:text="2000" android:layout_width="fill_parent" android:layout_margin="10dp" android:inputType="number" android:maxLength="5" android:maxLines="1" android:digits="0123456789"></EditText>
+			<EditText android:text="2000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:id="@+id/settings_player2_chips" android:inputType="number" android:maxLength="5" android:maxLines="1" android:digits="0123456789"></EditText>
+			</LinearLayout>
+		</LinearLayout>
+	
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/settings_layout_playerschips" android:layout_margin="10dp" android:id="@+id/settings_label_blinds" android:text="Blinds:" android:textSize="18sp"></TextView>
+		<TextView android:layout_height="wrap_content" android:layout_below="@+id/settings_label_blinds" android:id="@+id/settings_label_blindinfo" android:layout_marginLeft="10dp" android:text="Blinds are doubled each time the blind counter reaches zero. The small blind will be half of the big blind." android:layout_width="fill_parent" android:layout_marginRight="10dp"></TextView>
+	
+		<LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_below="@+id/settings_label_blindinfo" android:id="@+id/settings_layout_blinds" android:orientation="horizontal">
+			<LinearLayout android:layout_alignParentLeft="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/settings_layout_bigblind" android:layout_weight="0.5" android:orientation="vertical">
+				<TextView android:layout_height="wrap_content" android:text="Big Blind:" android:layout_alignParentLeft="true" android:layout_width="wrap_content" android:id="@+id/settings_label_bigblind" android:textSize="18sp" android:layout_margin="10dp"></TextView>
+				<EditText android:layout_height="wrap_content" android:id="@+id/settings_edit_bigblind" android:inputType="number" android:text="30" android:layout_width="fill_parent" android:layout_margin="10dp" android:maxLines="1" android:maxLength="5" android:digits="0123456789"></EditText>
+			
+
+			</LinearLayout>
+			<LinearLayout android:layout_alignParentLeft="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/settings_layout_blindtimer" android:layout_weight="0.5" android:orientation="vertical">
+				<TextView android:layout_height="wrap_content" android:text="Timer:" android:layout_alignParentLeft="true" android:layout_width="wrap_content" android:id="@+id/settings_label_blindtimer" android:layout_margin="10dp" android:textSize="18sp"></TextView>
+				<EditText android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:inputType="time" android:text="2:00" android:id="@+id/settings_edit_blindtimer"></EditText>
+			</LinearLayout>
+		</LinearLayout>
+		<Button android:text="Done" android:layout_height="wrap_content" android:id="@+id/settings_button_done" android:layout_below="@id/settings_layout_blinds" android:layout_width="wrap_content" android:layout_alignParentRight="true" android:layout_margin="10dp" android:minWidth="100dp"></Button>
+	</RelativeLayout>
+</ScrollView>

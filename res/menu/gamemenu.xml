@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/gamemenu_new"
+          android:icon="@drawable/ic_menu_add"
+          android:title="New game" />
+    <item android:id="@+id/gamemenu_settings"
+          android:icon="@drawable/ic_menu_preferences"
+          android:title="Settings" />
+    <item android:id="@+id/gamemenu_quit"
+          android:icon="@drawable/ic_menu_close_clear_cancel"
+          android:title="Quit" />
+</menu>

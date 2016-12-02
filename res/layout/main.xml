@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/LayoutMain">
+    <RelativeLayout android:id="@+id/LayoutMainContent" android:clickable="true" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:layout_height="fill_parent" android:layout_width="fill_parent">
+	
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:text="IdlePlayer" android:textStyle="bold" android:id="@+id/TextIdlePlayer"></TextView>
+		<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/TextIdlePlayer" android:id="@+id/LayoutP2Cards" android:layout_centerHorizontal="true">
+			<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/IdlePlayerCard1" android:layout_margin="2px" android:adjustViewBounds="true"></ImageView>
+			<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/IdlePlayerCard2" android:layout_margin="2px" android:adjustViewBounds="true"></ImageView>
+		</LinearLayout>
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:text="CurrentPlayer" android:id="@+id/TextCurrentPlayer" android:textStyle="bold" android:textSize="20dp"></TextView>
+		<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@+id/TextCurrentPlayer" android:id="@+id/LayoutP1Cards" android:layout_centerHorizontal="true">
+			<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/CurrentPlayerCard1" android:layout_margin="2px" android:adjustViewBounds="true"></ImageView>
+			<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/CurrentPlayerCard2" android:layout_margin="2px" android:adjustViewBounds="true"></ImageView>
+		</LinearLayout>
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@+id/TextCurrentPlayer" android:text="Chips: " android:id="@+id/LabelCurrentPlayerChips"></TextView>
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/TextIdlePlayer" android:text="Chips: " android:id="@+id/LabelIdlePlayerChips"></TextView>
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TextCurrentPlayerChips" android:layout_toRightOf="@id/LabelCurrentPlayerChips" android:layout_alignBaseline="@id/LabelCurrentPlayerChips" android:text="[Chips]"></TextView>
+		<TextView android:layout_below="@id/TextCurrentPlayerChips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="[Chips]" android:id="@+id/TextIdlePlayerChips" android:layout_alignBaseline="@id/LabelIdlePlayerChips" android:layout_toRightOf="@id/LabelIdlePlayerChips"></TextView>
+		<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/ButtonFold" android:text="Fold" android:layout_alignBottom="@id/TextCurrentPlayer" android:minWidth="60dp" android:layout_marginBottom="20dp" android:layout_alignParentRight="true" android:layout_marginRight="10dp"></Button>
+		<LinearLayout android:layout_height="wrap_content" android:id="@+id/LayoutBetCheck" android:layout_centerHorizontal="true" android:layout_width="fill_parent" android:layout_margin="10dp" android:layout_above="@+id/LayoutP1Cards">
+			<Button android:visibility="visible" android:text="Check/Call" android:id="@+id/ButtonCheckCall" android:layout_weight="1" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_marginRight="5dp"></Button>
+			<Button android:layout_height="wrap_content" android:id="@+id/ButtonRaise" android:text="Raise To: " android:layout_width="fill_parent" android:layout_weight="1" android:layout_marginLeft="5dp"></Button>
+		</LinearLayout>
+		
+		<SeekBar android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:id="@+id/SeekBetAmount" android:layout_width="fill_parent" android:paddingLeft="10px" android:paddingRight="10px" android:layout_above="@id/LayoutBetCheck" android:layout_margin="10dp"></SeekBar>
+		
+		<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/LayoutTableCards" android:layout_centerHorizontal="true" android:layout_above="@id/SeekBetAmount">
+			<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TableCard1" android:layout_margin="2px" android:adjustViewBounds="true"></ImageView>
+			<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TableCard2" android:layout_margin="2px" android:adjustViewBounds="true"></ImageView>
+			<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TableCard3" android:layout_margin="2px" android:adjustViewBounds="true"></ImageView>
+			<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TableCard4" android:layout_margin="2px" android:adjustViewBounds="true"></ImageView>
+			<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TableCard5" android:layout_margin="2px" android:adjustViewBounds="true"></ImageView>
+		</LinearLayout>
+		
+		<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:id="@+id/ButtonNextHand" android:clickable="true" android:text="Next Hand" android:layout_above="@id/LayoutTableCards"></Button>
+		<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:text="New Game" android:id="@+id/ButtonWinnerNewGame" android:clickable="true" android:layout_above="@id/LayoutTableCards"></Button>
+		
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@id/LabelCurrentPlayerChips" android:id="@+id/LabelCurrentPlayerBet" android:text="Bet: "></TextView>
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/LabelIdlePlayerChips" android:id="@+id/LabelIdlePlayerBet" android:text="Bet: "></TextView>
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/LabelIdlePlayerBet" android:id="@+id/TextIdlePlayerBet" android:text="[Bet]" android:layout_alignBaseline="@id/LabelIdlePlayerBet"></TextView>
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignBaseline="@id/LabelCurrentPlayerBet" android:layout_toRightOf="@id/LabelCurrentPlayerBet" android:text="[Bet]" android:id="@+id/TextCurrentPlayerBet"></TextView>
+			
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:id="@+id/TextPotAmount" android:text="[PotAmount]" android:layout_marginBottom="10dp" android:layout_above="@id/LayoutTableCards"></TextView>
+		<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_above="@id/TextPotAmount" android:layout_centerHorizontal="true" android:layout_marginBottom="10dp" android:id="@+id/TextStatus" android:text="[Status Message]"></TextView>
+	
+	</RelativeLayout>
+	
+	<RelativeLayout android:id="@+id/LayoutSwapPlayer" android:clickable="true" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:layout_height="fill_parent" android:layout_width="fill_parent" android:background="#DD000000">
+        <TextView android:textSize="20dp" android:id="@+id/TextPlayerTurn" android:text="name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:layout_centerInParent="true"></TextView>
+        <TextView android:textSize="30dp" android:id="@+id/TextSwapPlayer" android:text="Please hand to:" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_above="@id/TextPlayerTurn"></TextView>
+        <ImageView android:layout_width="wrap_content" android:src="@drawable/ic_menu_rotate" android:id="@+id/ImageSwapIcon" android:layout_height="wrap_content" android:layout_below="@+id/TextPlayerTurn" android:layout_centerHorizontal="true"></ImageView>    
+	</RelativeLayout>
+
+</RelativeLayout>
+
